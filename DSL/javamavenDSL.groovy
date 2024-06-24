@@ -1,5 +1,5 @@
 job('Java Maven App DSL') {
-    description('Java Maven App con DSL para el curso de Jenkins')
+    description('Java Maven App con DSL para el curso de Jenkins sin espacios')
     scm {
         git('https://github.com/josebaezae/simple-java-maven-app.git', 'master') { node ->
             node / gitConfigName('josebaezae')
@@ -16,9 +16,9 @@ job('Java Maven App DSL') {
           goals('test')
         }
         shell('''
-          echo "Entrega 3: Desplegando la aplicación"           
-	  java -jar "/var/jenkins_home/workspace/java\ app\ con\ maven\ git\ jose\ b/target/my-app-1.0-SNAPSHOT.jar"
-        ''')  
+          echo "Entrega 3: Desplegando la aplicación"
+	  java -jar "/var/jenkins_home/workspace/java-app-con-maven-git-jose-b/target/my-app-1.0-SNAPSHOT.jar"
+        ''') 
     }
     publishers {
         archiveArtifacts('target/*.jar')
