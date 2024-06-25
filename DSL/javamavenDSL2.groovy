@@ -1,9 +1,9 @@
-job('Java Maven App DSL 2') {
-    description('Java Maven App con DSL para el curso de Jenkins')
+job('Java-Maven-App-DSL-2') {
+    description('Java Maven App con DSL para el curso de Jenkins sin espacion')
     scm {
         git('https://github.com/macloujulian/simple-java-maven-app.git', 'master') { node ->
-            node / gitConfigName('macloujulian')
-            node / gitConfigEmail('macloujulian@gmail.com')
+            node / gitConfigName('josebaezae')
+            node / gitConfigEmail('josebaezae@gmail.com')
         }
     }
     steps {
@@ -17,7 +17,7 @@ job('Java Maven App DSL 2') {
         }
         shell('''
           echo "Entrega: Desplegando la aplicación" 
-          java -jar "/var/jenkins_home/workspace/Java Maven App DSL 2/target/my-app-1.0-SNAPSHOT.jar"
+          java -jar "/var/jenkins_home/workspace/Java-Maven-App-DSL-2/target/my-app-1.0-SNAPSHOT.jar"
         ''')  
     }
     publishers {
